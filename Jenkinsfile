@@ -5,19 +5,13 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                bat './mvnw build' 
+                bat './mvnw package' 
             }
         }
 
         stage('Test') {
             steps {
                 bat './mvnw test'
-            }
-        }
-
-        stage('Package'){
-            steps {
-                bat './mvnw package'
             }
         }
     }
