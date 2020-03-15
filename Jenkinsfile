@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                bat './mvnw compile' 
+                bat './mvnw install' 
             }
         }
 
@@ -19,6 +19,15 @@ pipeline {
             steps {
                 bat './mvnw package' 
             }
+        }
+
+        stage('Deploy') {
+            when {
+                expression { env.BRANCH_NAME == 'master'}
+            }          
+            steps {
+                bat './mvnw package' 
+            }            
         }
     }
 }
