@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                bat './mvnw compile' 
+                bat './mvnw build' 
             }
         }
 
@@ -26,7 +26,8 @@ pipeline {
                 expression { env.BRANCH_NAME == 'master'}
             }          
             steps {
-                bat './mvnw deploy' 
+                echo 'Pretend to deploy'
+               // bat './mvnw deploy' 
             }            
         }
     }
