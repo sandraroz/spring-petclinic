@@ -5,13 +5,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                bat './mvnw clean' 
-            }
-            steps {
-                bat './mvnw validate' 
-            }
-            steps {
-                bat './mvnw compile' 
+                bat './mvnw clean validate compile'                 
             }
         }
 
