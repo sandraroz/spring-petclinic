@@ -8,11 +8,5 @@ pipeline {
                 bat './mvnw package' 
             }
         }
-
-        stage('Test') {
-            steps {
-                bat './mvnw test'
-            }
-        }
     }
 }
