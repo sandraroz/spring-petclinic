@@ -8,5 +8,6 @@ pipeline {
                 bat './mvnw package' 
             }
         }
+        
     }
 }
