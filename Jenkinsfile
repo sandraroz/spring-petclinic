@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                bat './mvnw install' 
+                bat './mvnw package' 
             }
         }
 
